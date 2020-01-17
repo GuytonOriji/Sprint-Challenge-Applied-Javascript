@@ -17,3 +17,61 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+
+//BRB HAVE AN EMERGENCY.....
+
+const caroParent = document.querySelector(".carousel-container")
+let imgz = document.querySelectorAll(".carousel-container img")
+  function creationOfCarousel(){
+          let caro = document.createElement("div")
+          caro.classList.add("carousel")
+
+          let l_btn = document.createElement("div")
+          l_btn.classList.add("left-button")
+          l_btn.textContent= " < "
+              l_btn.addEventListener("click", function(e){
+                e.target.style=`
+                
+                -webkit-animation:slideLeft 1s linear infinite;
+                animation:slideLeft 1s linear infinite;
+                
+                `   
+                console.log(e.target.style);
+                  
+              })
+
+          let r_btn = document.createElement("div")
+          r_btn.classList.add("right-button")
+          r_btn.textContent= " > "
+          r_btn.addEventListener("click", function(e){
+                
+          })
+
+
+          let mountainImg = document.createElement("img")
+          mountainImg.src='./assets/carousel/mountains.jpeg'
+
+          let computerImg = document.createElement("img")
+          computerImg.src='./assets/carousel/computer.jpeg'
+
+          let treesImg = document.createElement("img")
+          treesImg.src='./assets/carousel/trees.jpeg'
+
+          let turntableImg = document.createElement("img")
+          turntableImg.src='./assets/carousel/turntable.jpeg'
+
+          caro.append(l_btn)
+          caro.append(mountainImg)
+          caro.append(computerImg)
+          caro.append(treesImg)
+          caro.append(turntableImg)
+          caro.append(r_btn)
+// console.log(caro);
+
+        return caro
+ }
+
+
+
+ caroParent.append(creationOfCarousel())
